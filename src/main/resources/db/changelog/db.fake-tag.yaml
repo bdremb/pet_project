@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3.2/1
+      author: bdrem (generated)
+      comment: "Add some fake tags"
+      changes:
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: id
+                  value: "1"
+              - column:
+                  name: name
+                  value: "Java"
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: id
+                  value: "2"
+              - column:
+                  name: name
+                  value: "PHP"
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: id
+                  value: "3"
+              - column:
+                  name: name
+                  value: "C++"
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: id
+                  value: "4"
+              - column:
+                  name: name
+                  value: "PostgreSQL"

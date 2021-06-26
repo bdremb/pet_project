@@ -1,0 +1,45 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1611440312838-8
+      author: bdrem (generated)
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: is_moderator
+                  type: TINYINT(1)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: photo
+                  type: TEXT
+              - column:
+                  name: reg_time
+                  type: datetime
+                  constraints:
+                    nullable: false

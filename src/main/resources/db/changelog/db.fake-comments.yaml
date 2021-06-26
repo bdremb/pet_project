@@ -1,0 +1,154 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.1/1
+      author: bdrem (generated)
+      comment: "Add some data to posts"
+      changes:
+        - insert:
+            tableName: post_comments
+            columns:
+              - column:
+                  name: id
+                  value: "1"
+              - column:
+                  name: parent_id
+                  value: "3"
+              - column:
+                  name: post_id
+                  value: "3"
+              - column:
+                  name: text
+                  value: "some comments"
+              - column:
+                  name: time
+                  value: "2020-01-25 18:03:11"
+              - column:
+                  name: user_id
+                  value: "3"
+        - insert:
+            tableName: post_comments
+            columns:
+              - column:
+                  name: id
+                  value: "2"
+              - column:
+                  name: parent_id
+                  value: "3"
+              - column:
+                  name: post_id
+                  value: "3"
+              - column:
+                  name: text
+                  value: "some comments"
+              - column:
+                  name: time
+                  value: "2020-01-25 18:03:11"
+              - column:
+                  name: user_id
+                  value: "3"
+
+        - insert:
+            tableName: post_comments
+            columns:
+              - column:
+                  name: id
+                  value: "3"
+              - column:
+                  name: parent_id
+                  value: "1"
+              - column:
+                  name: post_id
+                  value: "2"
+              - column:
+                  name: text
+                  value: "some comments"
+              - column:
+                  name: time
+                  value: "2020-01-27 18:05:31"
+              - column:
+                  name: user_id
+                  value: "1"
+        - insert:
+            tableName: post_comments
+            columns:
+              - column:
+                  name: id
+                  value: "4"
+              - column:
+                  name: parent_id
+                  value: "1"
+              - column:
+                  name: post_id
+                  value: "6"
+              - column:
+                  name: text
+                  value: "some comments"
+              - column:
+                  name: time
+                  value: "2020-01-22 14:05:31"
+              - column:
+                  name: user_id
+                  value: "1"
+        - insert:
+            tableName: post_comments
+            columns:
+              - column:
+                  name: id
+                  value: "5"
+              - column:
+                  name: parent_id
+                  value: "2"
+              - column:
+                  name: post_id
+                  value: "6"
+              - column:
+                  name: text
+                  value: "some comments"
+              - column:
+                  name: time
+                  value: "2020-01-22 11:05:31"
+              - column:
+                  name: user_id
+                  value: "2"
+        - insert:
+            tableName: post_comments
+            columns:
+              - column:
+                  name: id
+                  value: "6"
+              - column:
+                  name: parent_id
+                  value: "1"
+              - column:
+                  name: post_id
+                  value: "6"
+              - column:
+                  name: text
+                  value: "some comments"
+              - column:
+                  name: time
+                  value: "2020-01-22 14:23:31"
+              - column:
+                  name: user_id
+                  value: "3"
+        - insert:
+            tableName: post_comments
+            columns:
+              - column:
+                  name: id
+                  value: "7"
+              - column:
+                  name: parent_id
+                  value: "2"
+              - column:
+                  name: post_id
+                  value: "6"
+              - column:
+                  name: text
+                  value: "some comments"
+              - column:
+                  name: time
+                  value: "2020-01-29 14:23:31"
+              - column:
+                  name: user_id
+                  value: "4"

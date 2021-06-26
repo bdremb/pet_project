@@ -1,0 +1,221 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/db.changelog-create-captcha-codes.yaml
+  - include:
+      file: db/changelog/db.changelog-create-global-settings.yaml
+  - include:
+      file: db/changelog/db.changelog-create-post-comments.yaml
+  - include:
+      file: db/changelog/db.changelog-create-post-votes.yaml
+  - include:
+      file: db/changelog/db.changelog-create-posts.yaml
+  - include:
+      file: db/changelog/db.changelog-create-tag2post.yaml
+  - include:
+      file: db/changelog/db.changelog-create-tags.yaml
+  - include:
+      file: db/changelog/db.changelog-create-users.yaml
+  - changeSet:
+      id: 1611440312838-9
+      author: bdrem (generated)
+      changes:
+        - createIndex:
+            indexName: FK5lidm6cqbc7u4xhqpxm898qme
+            tableName: posts
+            columns:
+              - column:
+                  name: user_id
+  - changeSet:
+      id: 1611440312838-10
+      author: bdrem (generated)
+      changes:
+        - createIndex:
+            indexName: FK6m7nr3iwh1auer2hk7rd05riw
+            tableName: posts
+            columns:
+              - column:
+                  name: moderator_id
+  - changeSet:
+      id: 1611440312838-11
+      author: bdrem (generated)
+      changes:
+        - createIndex:
+            indexName: FK9jh5u17tmu1g7xnlxa77ilo3u
+            tableName: post_votes
+            columns:
+              - column:
+                  name: post_id
+  - changeSet:
+      id: 1611440312838-12
+      author: bdrem (generated)
+      changes:
+        - createIndex:
+            indexName: FK9q09ho9p8fmo6rcysnci8rocc
+            tableName: post_votes
+            columns:
+              - column:
+                  name: user_id
+  - changeSet:
+      id: 1611440312838-13
+      author: bdrem (generated)
+      changes:
+        - createIndex:
+            indexName: FKaawaqxjs3br8dw5v90w7uu514
+            tableName: post_comments
+            columns:
+              - column:
+                  name: post_id
+  - changeSet:
+      id: 1611440312838-14
+      author: bdrem (generated)
+      changes:
+        - createIndex:
+            indexName: FKjou6suf2w810t2u3l96uasw3r
+            tableName: tag2post
+            columns:
+              - column:
+                  name: tag_id
+  - changeSet:
+      id: 1611440312838-15
+      author: bdrem (generated)
+      changes:
+        - createIndex:
+            indexName: FKpjoedhh4h917xf25el3odq20i
+            tableName: tag2post
+            columns:
+              - column:
+                  name: post_id
+  - changeSet:
+      id: 1611440312838-16
+      author: bdrem (generated)
+      changes:
+        - createIndex:
+            indexName: FKsnxoecngu89u3fh4wdrgf0f2g
+            tableName: post_comments
+            columns:
+              - column:
+                  name: user_id
+  - changeSet:
+      id: 1611440312838-17
+      author: bdrem (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: posts
+            constraintName: FK5lidm6cqbc7u4xhqpxm898qme
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: users
+  - changeSet:
+      id: 1611440312838-18
+      author: bdrem (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: moderator_id
+            baseTableName: posts
+            constraintName: FK6m7nr3iwh1auer2hk7rd05riw
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: users
+  - changeSet:
+      id: 1611440312838-19
+      author: bdrem (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: post_id
+            baseTableName: post_votes
+            constraintName: FK9jh5u17tmu1g7xnlxa77ilo3u
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: posts
+  - changeSet:
+      id: 1611440312838-20
+      author: bdrem (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: post_votes
+            constraintName: FK9q09ho9p8fmo6rcysnci8rocc
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: users
+  - changeSet:
+      id: 1611440312838-21
+      author: bdrem (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: post_id
+            baseTableName: post_comments
+            constraintName: FKaawaqxjs3br8dw5v90w7uu514
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: posts
+  - changeSet:
+      id: 1611440312838-22
+      author: bdrem (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: tag_id
+            baseTableName: tag2post
+            constraintName: FKjou6suf2w810t2u3l96uasw3r
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: tags
+  - changeSet:
+      id: 1611440312838-23
+      author: bdrem (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: post_id
+            baseTableName: tag2post
+            constraintName: FKpjoedhh4h917xf25el3odq20i
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: posts
+  - changeSet:
+      id: 1611440312838-24
+      author: bdrem (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: post_comments
+            constraintName: FKsnxoecngu89u3fh4wdrgf0f2g
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: users
+  - include:
+      file: db/changelog/db.fake-users.yaml
+  - include:
+      file: db/changelog/db.fake-posts.yaml
+  - include:
+      file: db/changelog/db.fake-comments.yaml
+  - include:
+      file: db/changelog/db.fake-votes.yaml
+  - include:
+      file: db/changelog/db.fake-tag.yaml
+  - include:
+      file: db/changelog/db.fake-tag2post.yaml

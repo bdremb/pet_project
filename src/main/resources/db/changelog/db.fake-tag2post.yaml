@@ -1,0 +1,78 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3.2/1
+      author: bdrem (generated)
+      comment: "Add some fake tags"
+      changes:
+        - insert:
+            tableName: tag2post
+            columns:
+              - column:
+                  name: post_id
+                  value: "10"
+              - column:
+                  name: tag_id
+                  value: "1"
+        - insert:
+            tableName: tag2post
+            columns:
+              - column:
+                  name: post_id
+                  value: "1"
+              - column:
+                  name: tag_id
+                  value: "1"
+        - insert:
+            tableName: tag2post
+            columns:
+              - column:
+                  name: post_id
+                  value: "2"
+              - column:
+                  name: tag_id
+                  value: "2"
+        - insert:
+            tableName: tag2post
+            columns:
+              - column:
+                  name: post_id
+                  value: "3"
+              - column:
+                  name: tag_id
+                  value: "3"
+        - insert:
+            tableName: tag2post
+            columns:
+              - column:
+                  name: post_id
+                  value: "4"
+              - column:
+                  name: tag_id
+                  value: "1"
+        - insert:
+            tableName: tag2post
+            columns:
+              - column:
+                  name: post_id
+                  value: "12"
+              - column:
+                  name: tag_id
+                  value: "1"
+        - insert:
+            tableName: tag2post
+            columns:
+              - column:
+                  name: post_id
+                  value: "12"
+              - column:
+                  name: tag_id
+                  value: "2"
+        - insert:
+            tableName: tag2post
+            columns:
+              - column:
+                  name: post_id
+                  value: "6"
+              - column:
+                  name: tag_id
+                  value: "4"

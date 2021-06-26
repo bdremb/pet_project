@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1611440312838-5
+      author: bdrem (generated)
+      changes:
+        - createTable:
+            tableName: posts
+            columns:
+              - column:
+                  name: id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: is_active
+                  type: TINYINT(1)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: moderation_status
+                  type: ENUM('NEW', 'ACCEPTED', 'DECLINED')
+                  constraints:
+                    nullable: false
+              - column:
+                  name: text
+                  type: TEXT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: time
+                  type: datetime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: title
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: view_count
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: moderator_id
+                  type: INT
+              - column:
+                  name: user_id
+                  type: INT

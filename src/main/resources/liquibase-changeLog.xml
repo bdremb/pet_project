@@ -1,0 +1,291 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="bdrem (generated)" id="1611440312838-1">
+        <createTable tableName="captcha_codes">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="code" type="TINYTEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="secret_code" type="TINYTEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="time" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-2">
+        <createTable tableName="global_settings">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="code" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-3">
+        <createTable tableName="post_comments">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="parent_id" type="INT"/>
+            <column name="post_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="text" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="time" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="INT"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-4">
+        <createTable tableName="post_votes">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="post_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="time" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="value" type="TINYINT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="user_id" type="INT"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-5">
+        <createTable tableName="posts">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="is_active" type="TINYINT(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="moderation_status" type="ENUM('NEW', 'ACCEPTED', 'DECLINED')">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="text" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="time" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="title" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="view_count" type="INT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="moderator_id" type="INT"/>
+            <column name="user_id" type="INT"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-6">
+        <createTable tableName="tag2post">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="post_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="tag_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-7">
+        <createTable tableName="tags">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-8">
+        <createTable tableName="users">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="code" type="VARCHAR(255)"/>
+
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_moderator" type="TINYINT(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="photo" type="TEXT"/>
+            <column name="reg_time" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-9">
+        <createIndex indexName="FK5lidm6cqbc7u4xhqpxm898qme" tableName="posts">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-10">
+        <createIndex indexName="FK6m7nr3iwh1auer2hk7rd05riw" tableName="posts">
+            <column name="moderator_id"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-11">
+        <createIndex indexName="FK9jh5u17tmu1g7xnlxa77ilo3u" tableName="post_votes">
+            <column name="post_id"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-12">
+        <createIndex indexName="FK9q09ho9p8fmo6rcysnci8rocc" tableName="post_votes">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-13">
+        <createIndex indexName="FKaawaqxjs3br8dw5v90w7uu514" tableName="post_comments">
+            <column name="post_id"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-14">
+        <createIndex indexName="FKjou6suf2w810t2u3l96uasw3r" tableName="tag2post">
+            <column name="tag_id"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-15">
+        <createIndex indexName="FKpjoedhh4h917xf25el3odq20i" tableName="tag2post">
+            <column name="post_id"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-16">
+        <createIndex indexName="FKsnxoecngu89u3fh4wdrgf0f2g" tableName="post_comments">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-17">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="posts"
+                                 constraintName="FK5lidm6cqbc7u4xhqpxm898qme" deferrable="false"
+                                 initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT"
+                                 referencedColumnNames="id" referencedTableName="users"/>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-18">
+        <addForeignKeyConstraint baseColumnNames="moderator_id" baseTableName="posts"
+                                 constraintName="FK6m7nr3iwh1auer2hk7rd05riw" deferrable="false"
+                                 initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT"
+                                 referencedColumnNames="id" referencedTableName="users"/>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-19">
+        <addForeignKeyConstraint baseColumnNames="post_id" baseTableName="post_votes"
+                                 constraintName="FK9jh5u17tmu1g7xnlxa77ilo3u" deferrable="false"
+                                 initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT"
+                                 referencedColumnNames="id" referencedTableName="posts"/>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-20">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="post_votes"
+                                 constraintName="FK9q09ho9p8fmo6rcysnci8rocc" deferrable="false"
+                                 initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT"
+                                 referencedColumnNames="id" referencedTableName="users"/>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-21">
+        <addForeignKeyConstraint baseColumnNames="post_id" baseTableName="post_comments"
+                                 constraintName="FKaawaqxjs3br8dw5v90w7uu514" deferrable="false"
+                                 initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT"
+                                 referencedColumnNames="id" referencedTableName="posts"/>
+    </changeSet>
+
+    <changeSet author="bdrem (generated)" id="1611440312838-22">
+        <addForeignKeyConstraint baseColumnNames="tag_id" baseTableName="tag2post"
+                                 constraintName="FKjou6suf2w810t2u3l96uasw3r" deferrable="false"
+                                 initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT"
+                                 referencedColumnNames="id" referencedTableName="tags"/>
+    </changeSet>
+    <changeSet author="bdrem (generated)" id="1611440312838-23">
+        <addForeignKeyConstraint baseColumnNames="post_id" baseTableName="tag2post"
+                                 constraintName="FKpjoedhh4h917xf25el3odq20i" deferrable="false"
+                                 initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT"
+                                 referencedColumnNames="id" referencedTableName="posts"/>
+    </changeSet>
+    <changeSet author="bdrem (generated)" id="1611440312838-24">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="post_comments"
+                                 constraintName="FKsnxoecngu89u3fh4wdrgf0f2g" deferrable="false"
+                                 initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT"
+                                 referencedColumnNames="id" referencedTableName="users"/>
+    </changeSet>
+</databaseChangeLog>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

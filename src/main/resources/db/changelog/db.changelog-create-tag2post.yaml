@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1611440312838-6
+      author: bdrem (generated)
+      changes:
+        - createTable:
+            tableName: tag2post
+            columns:
+              - column:
+                  name: id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: post_id
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: tag_id
+                  type: INT
+                  constraints:
+                    nullable: false

@@ -1,0 +1,80 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1611440312838-2
+      author: bdrem (generated)
+      changes:
+        - createTable:
+            tableName: global_settings
+            columns:
+              - column:
+                  name: id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: code
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: value
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 6.1/1
+      author: bdrem (generated)
+      comment: "Add default settings"
+      changes:
+        - insert:
+            tableName: global_settings
+            columns:
+              - column:
+                  name: id
+                  value: "1"
+              - column:
+                  name: code
+                  value: "MULTIUSER_MODE"
+              - column:
+                  name: name
+                  value: "Многопользовательский режим"
+              - column:
+                  name: value
+                  value: "true"
+        - insert:
+            tableName: global_settings
+            columns:
+              - column:
+                  name: id
+                  value: "2"
+              - column:
+                  name: code
+                  value: "POST_PREMODERATION"
+              - column:
+                  name: name
+                  value: "Премодерация постов"
+              - column:
+                  name: value
+                  value: "true"
+        - insert:
+            tableName: global_settings
+            columns:
+              - column:
+                  name: id
+                  value: "3"
+              - column:
+                  name: code
+                  value: "STATISTICS_IS_PUBLIC"
+              - column:
+                  name: name
+                  value: "Показывать всем статистику блога"
+              - column:
+                  name: value
+                  value: "false"
+

@@ -1,0 +1,141 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.0/7
+      author: bdrem (generated)
+      comment: "Add some data to users"
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: "1"
+              - column:
+                  name: code
+                  value: ""
+              - column:
+                  name: email
+                  value: "email11@mail.com"
+              - column:
+                  name: is_moderator
+                  value: "1"
+              - column:
+                  name: name
+                  value: "Ivan"
+              - column:
+                  name: password
+                  value: "$2y$12$Ig5u3wjD2llNUUKyjmkHaOQPN9NoyfiqsxsJb26VMBHthRO7bBASa"
+              - column:
+                  name: photo
+                  value: ""
+              - column:
+                  name: reg_time
+                  value: "2020-11-10 11:11:11"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: "2"
+              - column:
+                  name: code
+                  value: ""
+              - column:
+                  name: email
+                  value: "moderator@moderator.com"
+              - column:
+                  name: is_moderator
+                  value: "1"
+              - column:
+                  name: name
+                  value: "Moderator"
+              - column:
+                  name: password
+                  value: "$2y$12$CqOEk6EwwSWyTDpHe3nhM.o6Svk.Joo25hlLkfvDK3X5QVmSwH1Pu"
+              - column:
+                  name: photo
+                  value: ""
+              - column:
+                  name: reg_time
+                  value: "2021-01-22 12:12:12"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: "3"
+              - column:
+                  name: code
+                  value: ""
+              - column:
+                  name: email
+                  value: "user@user.com"
+              - column:
+                  name: is_moderator
+                  value: "0"
+              - column:
+                  name: name
+                  value: "USER"
+              - column:
+                  name: password
+                  value: "$2y$12$F7XFz9Tji9kd8ub3GquOBOSq5fLqK6Kb9A0o0xcVTIlHmsu0iSrF6"
+              - column:
+                  name: photo
+                  value: ""
+              - column:
+                  name: reg_time
+                  value: "2021-01-13 03:13:33"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: "4"
+              - column:
+                  name: code
+                  value: ""
+              - column:
+                  name: email
+                  value: "dd44@mail.com"
+              - column:
+                  name: is_moderator
+                  value: "0"
+              - column:
+                  name: name
+                  value: "Vasiliy"
+              - column:
+                  name: password
+                  value: "$2y$12$K0XmdxDZgqNg2wsTyv66iuzFHZ0Hqj1FvR0TAiw1.n.5IN7hZX.zS"
+              - column:
+                  name: photo
+                  value: ""
+              - column:
+                  name: reg_time
+                  value: "2021-01-24 14:14:44"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: "5"
+              - column:
+                  name: code
+                  value: ""
+              - column:
+                  name: email
+                  value: "ver44@mail.com"
+              - column:
+                  name: is_moderator
+                  value: "1"
+              - column:
+                  name: name
+                  value: "Olga"
+              - column:
+                  name: password
+                  value: "$2y$12$fDP4LDHaVQtcR/71VyTEi.gaTxhn9z5rM3ZDh0e9MjX6rWq7mj5Ka"
+              - column:
+                  name: photo
+                  value: ""
+              - column:
+                  name: reg_time
+                  value: "2020-12-25 15:55:25"
