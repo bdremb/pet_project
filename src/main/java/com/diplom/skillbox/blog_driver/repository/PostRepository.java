@@ -33,9 +33,9 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
       + " AND YEAR(p.time) = YEAR(:localDate) AND MONTH(p.time) = MONTH(:localDate) AND DAY(p.time) = DAY(:localDate)")
   Page<Post> findPostsByDate(LocalDate localDate, Pageable pageable);
 
-  @Query(value = "SELECT p FROM Post p"
-      + " WHERE p.isActive = 1 AND p.moderationStatus = 'ACCEPTED' AND YEAR(p.time) = YEAR(:localDate)")
-  List<Post> findAllPostsByYear(LocalDate localDate);
+//  @Query(value = "SELECT p FROM Post p"
+//      + " WHERE p.isActive = 1 AND p.moderationStatus = 'ACCEPTED' AND YEAR(p.time) = YEAR(:localDate)")
+//  List<Post> findAllPostsByYear(LocalDate localDate);
 
   @Query(value = "SELECT p FROM Post p"
       + " LEFT JOIN FETCH Tag2Post tp ON tp.postId = p.id"
@@ -76,9 +76,9 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
       + " ORDER BY years")
   List<Integer> findYearsOfPosts(LocalDateTime localDateTime);
 
-  @Query(value = "SELECT DATE_FORMAT(p.time,'%Y-%m-%d' ) FROM Post p WHERE YEAR(p.time) = :year "
-      + " AND p.isActive = 1 AND p.moderationStatus = 'ACCEPTED'")
-  List<String> findDatesOfPostsByYear(int year);
+//  @Query(value = "SELECT DATE_FORMAT(p.time,'%Y-%m-%d' ) FROM Post p WHERE YEAR(p.time) = :year "
+//      + " AND p.isActive = 1 AND p.moderationStatus = 'ACCEPTED'")
+//  List<String> findDatesOfPostsByYear(int year);
 
   @Query(value = "SELECT COUNT(p) FROM Post p WHERE p.moderationStatus = 'NEW' AND p.moderator IS NULL ")
   int findCountOfPostForModeration(String userEmail);

@@ -1,0 +1,59 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/blog_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: testtest
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        show_sql: true
+        ddl-auto: none
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+  mail:
+    host: smtp.yandex.by
+    username: test@yandex.by
+    password: password
+    port: 465
+    protocol: smtps
+    debug: true
+    server:
+      link: https://bobkin-web-blog.herokuapp.com/login/change-password/
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+      enabled: true
+
+server.port: ${PORT:80}
+
+#     blog information settings
+init:
+  title: Swagger Open API Spec 3.0.2
+  subtitle: SWAGGER RESEARCH
+  phone: +7 920 111-11-11
+  email: swagger@mail.ru
+  copyright: Ddd Mmm
+  copyrightFrom: 2020
+
+#    storage time of captcha in hours
+captcha:
+  hoursOfExist: 1
+
+#    upload image settings
+upload:
+  path: upload
+  photoPath: author
+  max-image-width: 900
+  max-avatar-width: 100
+  max-image-size: 5000000
+
+#    Cloudinary settings
+cloudinary:
+  cloud-name: hhhhhhh
+  api-key: 6124341324234
+  api-secret: SDFsdfgsdSDGFSDF
+
+user.photo.default: https://res.cloudinary.com/a.png

@@ -19,7 +19,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: moderation_status
-                  type: ENUM('NEW', 'ACCEPTED', 'DECLINED')
+                  type: VARCHAR(255)
                   constraints:
                     nullable: false
               - column:

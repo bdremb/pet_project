@@ -1,10 +1,7 @@
 <databaseChangeLog
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
-   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
-   http://www.liquibase.org/xml/ns/dbchangelog
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
     <changeSet author="bdrem (generated)" id="1611440312838-1">
@@ -93,7 +90,7 @@
             <column name="is_active" type="TINYINT(1)">
                 <constraints nullable="false"/>
             </column>
-            <column name="moderation_status" type="ENUM('NEW', 'ACCEPTED', 'DECLINED')">
+            <column name="moderation_status" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
 
